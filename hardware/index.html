@@ -1,0 +1,939 @@
+<!DOCTYPE html><html lang="de" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../setup/thonny/">
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Hardware - IoT-Sensor</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#der-iot-sensor" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href=".." title="IoT-Sensor" class="md-header__button md-logo" aria-label="IoT-Sensor" data-md-component="logo">
+      
+  <img src="../images/sick_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IoT-Sensor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hardware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IoT-Sensor" class="md-nav__button md-logo" aria-label="IoT-Sensor" data-md-component="logo">
+      
+  <img src="../images/sick_logo.png" alt="logo">
+
+    </a>
+    IoT-Sensor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#uberblick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Überblick
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Überblick">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pinbelegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinbelegung
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-pico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raspberry Pi Pico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi Pico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aus-und-eingange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aus- und Eingänge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aus- und Eingänge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ground-gnd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ground (GND)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpio-pio" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPIO, PIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwm" class="md-nav__link">
+    <span class="md-ellipsis">
+      PWM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      I2C
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Entwicklungsumgebung
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Entwicklungsumgebung
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/thonny/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IDE Thonny
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Codebeispiele
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Codebeispiele
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-samples/grundlagen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-samples/lichtsensor-display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Helligkeitssensor mit Display
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-samples/lichtschranke/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lichtschranke
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-samples/reaktionsspiel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reaktionsspiel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support &amp; FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.sick.com/de/de/s/imprint" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impressum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#uberblick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Überblick
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Überblick">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pinbelegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinbelegung
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-pico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raspberry Pi Pico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Raspberry Pi Pico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aus-und-eingange" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aus- und Eingänge
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aus- und Eingänge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ground-gnd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ground (GND)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpio-pio" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPIO, PIO
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ADC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwm" class="md-nav__link">
+    <span class="md-ellipsis">
+      PWM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      I2C
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="der-iot-sensor">Der IoT Sensor</h1>
+<h2 id="uberblick">Überblick</h2>
+<p>Das IoT-Sensor-Set besteht aus einem Raspberry Pi Pico 2 W und einer Platine mit verschiedenen Bauteilen wie LED, Taster, Photodiode, Buzzer, RGB-LED und Display. Zusätzlich sind ein kleiner Reflektor und ein USB-Kabel enthalten.</p>
+<ul>
+<li><strong>IoT Sensor</strong> <em>Raspberry Pi Pico mit Erweiterungsplatine</em></li>
+<li><strong>Reflektor</strong></li>
+<li><strong>USB-Kabel</strong></li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/images/iot-sensor-with-pi-pico-top-bottom.jpg" data-desc-position="bottom"><img alt="Raspberry Pi" class="img-center" src="/images/iot-sensor-with-pi-pico-top-bottom.jpg" width="400"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/images/iot-sensor-top.jpg" data-desc-position="bottom"><img alt="Komponenten" class="img-center" src="/images/iot-sensor-top.jpg" width="400"></a></p>
+<h3 id="pinbelegung">Pinbelegung</h3>
+<p>Um die Bauteile mit dem Raspberry Pi Pico anzusteuern, ist es wichtig zu wissen,
+welches Bauteil an welchen Pin angeschlossen ist.
+Die folgende Tabelle gibt einen Überblick, welcher Pin des Raspberry Pi Pico über die Platine mit welchem Bauteil verbunden ist und gibt eine kurze Erklärung für die Zuordnung.</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th style="text-align: left;">Funktion</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GP1</td>
+<td style="text-align: left;">Taster</td>
+<td>Der Taster ist verbunden mit einem GPIO Pin, um einlesen zu können, ob der Taster gedrückt ist (Eingabe 0) oder nicht (Eingabe 1).</td>
+</tr>
+<tr>
+<td>GP2</td>
+<td style="text-align: left;">Bildschirm SDA</td>
+<td>Der Bildschirm wird mit I2C angesteuert. GP2 wird als Serial-Data-Pin (SDA-Pin) verwendet.</td>
+</tr>
+<tr>
+<td>GP3</td>
+<td style="text-align: left;">Bildschirm SCL</td>
+<td>Der Bildschirm wird mit I2C angesteuert. GP3 wird als Serial-Clock-Pin (SCL-Pin) verwendet.</td>
+</tr>
+<tr>
+<td>GP7</td>
+<td style="text-align: left;">RGB-LED Grün</td>
+<td>Damit der Grünanteil der RGB-LED dimmbar ist, wird dieser an einen PWM-fähigen Pin angeschlossen.</td>
+</tr>
+<tr>
+<td>GP8</td>
+<td style="text-align: left;">RGB-LED Blau</td>
+<td>Damit der Blauanteil der RGB-LED dimmbar ist, wird dieser an einen PWM-fähigen Pin angeschlossen.</td>
+</tr>
+<tr>
+<td>GP9</td>
+<td style="text-align: left;">RGB-LED Rot</td>
+<td>Damit der Rotanteil der RGB-LED dimmbar ist, wird dieser an einen PWM-fähigen Pin angeschlossen.</td>
+</tr>
+<tr>
+<td>GP15</td>
+<td style="text-align: left;">LED-Front</td>
+<td>Für die vorne angebrachte weiße LED genügt ein einfacher GPIO-Pin.</td>
+</tr>
+<tr>
+<td>GP16</td>
+<td style="text-align: left;">Buzzer (Lautsprecher)</td>
+<td>Der Buzzer muss mit einem PWM-fähigem Pin verbunden werden, da so die Frequenz des Tones verändert werden kann.</td>
+</tr>
+<tr>
+<td>GP28</td>
+<td style="text-align: left;">Photodiode einlesen</td>
+<td>Für die Photodiode wird ein GPIO-Pin mit ADC verwendet, um den Messwert zu lesen.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="raspberry-pi-pico">Raspberry Pi Pico</h2>
+<p>In diesem Abschnitt folgen allgemeine Infos zum Raspberry Pi Pico.
+Es handelt es sich um ein Mikrocontroller-Board, das einfach programmiert werden kann.
+Je nach Modell ist im Raspberry Pi Pico ein WLAN- und Bluetoothmodul integriert.</p>
+<h3 id="aus-und-eingange">Aus- und Eingänge</h3>
+<p>Der Raspberry Pi Pico hat insgesamt vierzig Pins, die unterschiedliche Funktionen haben.
+Die folgende Grafik zeigt, welche Pins welche Funktion haben.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/images/pico2w-pinout.svg" data-desc-position="bottom"><img alt="Pinout des Raspberry Pi Pico 2 W" class="img-center" src="/images/pico2w-pinout.svg" width="400"></a></p>
+<p>Bildquelle: <a href="https://www.raspberrypi.com/documentation/microcontrollers/images/pico2w-pinout.svg">www.raspberrypi.com</a> [Externer Link]</p>
+<h4 id="ground-gnd">Ground (GND)</h4>
+<p>GND‑Pins (kurz für „Ground“) sind der gemeinsame Bezugspunkt einer Schaltung.
+Alle Spannungen werden im Verhältnis zu GND gemessen.
+Wird zum Beispiel eine LED an Pin 4 eines Mikrocontrollers angeschlossen, muss die LED zusätzlich mit einem GND‑Pin verbunden werden.
+Erst dadurch ist der Stromkreis geschlossen und die LED kann leuchten.</p>
+<h4 id="power">Power</h4>
+<p>Power Pins sind Ausgänge, an denen die Betriebsspannung des Mikrocontrollers anliegt.
+Beim Raspberry Pi Pico 2 W sind das 3,3 V.
+Die Spannung an den Power-Pins ist konstant und kann nicht verändert werden.</p>
+<h4 id="gpio-pio">GPIO, PIO</h4>
+<p>GPIO steht für general-purpose input/output. Die Pins werden hauptsächlich für zwei Aufgaben verwendet:</p>
+<ul>
+<li>Die Spannung an den GPIO-Pins kann durch die Programmierung des Mikrocontrollers verändert werden.
+    Dabei kann sie nur ein- oder ausgeschaltet sein.
+    So lässt sich zum Beispiel eine LED steuern.</li>
+<li>Die Spannung an den GPIO-Pins kann auch eingelesen werden.
+    Ohne Analog-zu-Digital-Konverter steht das Ergebnis nur digital zur Verfügung. Das heißt: Es kann nur unterschieden werden, ob eine Spannung anliegt oder nicht.</li>
+</ul>
+<p>PIO steht für programmable input/output. PIO-Pins haben dieselben Funktionen wie GPIO-Pins.
+Der einzige Unterschied liegt in der technischen Realisierung der Funktionen.</p>
+<h4 id="adc">ADC</h4>
+<p>ADC ist die Abkürzung für Analog-zu-Digital-Konverter. Die an einem ADC-Pin anliegende Spannung kann genauer gemessen werden als an normalen GPIO-Pins.
+Die Anzahl der Bits eines ADC bestimmt die Genauigkeit des Messwerts.
+Der Raspberry Pi Pico verwendet 12-Bit-ADCs.
+Dabei wird die anliegende Spannung als Wert zwischen 0 und 4095 ausgegeben. Das sind insgesamt $2^{12} = 4096$ mögliche Werte.
+Alle Spannungswerte von 0 bis $(1/4096)$ der Maximalspannung ergeben dabei den Messwert 0.</p>
+<h4 id="pwm">PWM</h4>
+<p>PWM steht für Pulsweitenmodulation.
+Es handelt sich um eine Technik, mit der die mittlere Leistung eines elektrischen Signals gesteuert wird.
+Das Signal wird dabei periodisch sehr schnell an- und ausgeschaltet. Der Vorgang ist unten grafisch dargestellt.
+Das Verhältnis der Impulsdauer zur Periodendauer nennt man Tastgrad.
+Mit dieser Technik ist es möglich, LEDs zu dimmen, indem zum Beispiel für 2 Millisekunden Strom fließt und anschließend für 8 Millisekunden keiner.
+Der Tastgrad beträgt in diesem Beispiel 20%. Das bedeutet, die LED ist bei 20% ihrer vollen Helligkeit.
+Das funktioniert nur, wenn der Wechsel so schnell erfolgt, dass das menschliche Auge ihn nicht mehr als solchen wahrnimmt.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/images/pwm.png" data-desc-position="bottom"><img alt="PWM-Ausgangssignal über Zeit" class="img-center" src="/images/pwm.png" width="400"></a></p>
+<p>Bildquelle: <a href="https://www.elektronik-kompendium.de/sites/kom/diagramm/04011113.png">www.elektronik-kompendium.de</a> [Externer Link]</p>
+<h4 id="i2c">I2C</h4>
+<p>Bei I2C handelt es sich um einen seriellen Datenbus, der zur Übertragung von Daten zwischen verschiedenen Geräten verwendet wird.
+I2C arbeitet nach dem Master-Slave-Prinzip (auch Controller-Peripheral-Prinzip). Das bedeutet, dass nur das Master-Gerät unaufgefordert senden darf.
+Alle Slave-Geräte antworten nur, wenn sie dazu aufgefordert werden. Es kann mehrere Slave-Geräte geben, da diese über Adressen eindeutig identifizierbar sind.</p>
+<p>Für die Datenübertragung verwendet I2C zwei Leitungen: </p>
+<ul>
+<li>Die Taktleitung dient dem Takten der Datenübertragung. Dafür wird der SCL-Pin (kurz für Serial-Clock) verwendet.</li>
+<li>Die Datenleitung dient dem tatsächlichen Übertragen der Daten. Dafür wird der SDA-Pin (kurz für Serial Data) verwendet.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,0 +1,1015 @@
+<!DOCTYPE html><html lang="de" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../setup/thonny/">
+      
+      
+        <link rel="next" href="../lichtsensor-display/">
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Grundlagen - IoT-Sensor</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#grundlagen" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../.." title="IoT-Sensor" class="md-header__button md-logo" aria-label="IoT-Sensor" data-md-component="logo">
+      
+  <img src="../../images/sick_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IoT-Sensor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Grundlagen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IoT-Sensor" class="md-nav__button md-logo" aria-label="IoT-Sensor" data-md-component="logo">
+      
+  <img src="../../images/sick_logo.png" alt="logo">
+
+    </a>
+    IoT-Sensor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Entwicklungsumgebung
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Entwicklungsumgebung
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/thonny/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IDE Thonny
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Codebeispiele
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Codebeispiele
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Grundlagen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grundlagen
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#allgemeine-infos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allgemeine Infos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-weie-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Weiße LED
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-photodiode" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Photodiode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rgb-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. RGB-LED
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-taster" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Taster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-buzzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Buzzer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Display
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lichtsensor-display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Helligkeitssensor mit Display
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lichtschranke/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lichtschranke
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reaktionsspiel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reaktionsspiel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support &amp; FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.sick.com/de/de/s/imprint" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impressum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#allgemeine-infos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allgemeine Infos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-weie-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Weiße LED
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-photodiode" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Photodiode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rgb-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. RGB-LED
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-taster" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Taster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-buzzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Buzzer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Display
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="grundlagen">Grundlagen</h1>
+<p>Auf dieser Seite lernst du die Bauteile einzeln anzusteuern.
+Kopiere immer nur ein Beispiel gleichzeitig in die Datei <code>main.py</code>.</p>
+<h2 id="allgemeine-infos">Allgemeine Infos</h2>
+<p><strong>Anzeige</strong> <code>print("[Beliebiger Text]")</code> ermöglicht es dir, Text in Thonny anzeigen zu lassen. Dieser wird in der Kommandozeile (Fenster unten) dargestellt.</p>
+<p><strong>Endlosschleife</strong> Damit das Programm endlos läuft, wird eine Schleife benötigt. <code>while True:</code> bewirkt, dass der eingerückte Inhalt immer wieder ausgeführt wird. Wenn du ein Programm stoppen willst, klicke in Thonny auf den roten Stopp-Knopf.</p>
+<p><strong>Kommentar</strong> Kommentare sind ebenfalls möglich und werden zur Erläuterung verwendet. Diese werden durch <code>#</code> erstellt.</p>
+<h2 id="1-weie-led">1. Weiße LED</h2>
+<p>Die weiße LED ist an Pin 15 angeschlossen. Sie soll 2 Sekunden leuchten und danach wieder ausgehen. Nach <code>led.off()</code> ist das Programm zu Ende.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+
+<span class="c1"># LED einschalten.</span>
+<span class="n">led</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="c1"># 2 Sekunden warten.</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># LED wieder ausschalten.</span>
+<span class="n">led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</code></pre></div>
+<p>Teste auch: Ändere die <code>2</code> zu <code>1</code> oder <code>5</code>.</p>
+<h2 id="2-photodiode">2. Photodiode</h2>
+<p>Die Photodiode misst die Lichtintensität.
+Je heller es ist, desto höher ist der Wert.
+Dieser soll in der Kommandozeile ausgegeben werden.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">ADC</span><span class="p">,</span> <span class="n">Pin</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">sensor</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">28</span><span class="p">))</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Aktuellen Lichtwert lesen.</span>
+    <span class="n">wert</span> <span class="o">=</span> <span class="n">sensor</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span>
+    <span class="c1"># Wert in der Kommandozeile ausgeben.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">wert</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</code></pre></div>
+<p>Teste auch: Halte deine Hand vor den Sensor oder leuchte mit einer Lampe darauf.</p>
+<h2 id="3-rgb-led">3. RGB-LED</h2>
+<p>Die RGB‑LED ist eine farbige LED. In ihr stecken eigentlich drei LEDs:</p>
+<ul>
+<li><strong>R</strong> = Rot  </li>
+<li><strong>G</strong> = Grün  </li>
+<li><strong>B</strong> = Blau  </li>
+</ul>
+<p>Durch das Mischen dieser drei Farben können viele andere Farben entstehen.</p>
+<p>Die Farben werden mit PWM gesteuert. Dabei benutzt der Mikrocontroller Zahlen von 0 bis 65535:</p>
+<ul>
+<li><code>0</code> → LED <strong>aus</strong></li>
+<li><code>65535</code> → LED <strong>ganz hell</strong></li>
+<li>Zahlen dazwischen → LED <strong>dazwischen</strong></li>
+</ul>
+<p>Du musst noch nicht verstehen, wie PWM technisch funktioniert. 
+Falls es dich interessiert, schau auf der Hardware-Seite vorbei.
+Wichtig ist erstmal nur: Große Zahl = hell, kleine Zahl = dunkel.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">PWM</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Alle drei Farben vorbereiten.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Beispiele:</span>
+<span class="c1"># Rot   = 65535, 0, 0</span>
+<span class="c1"># Gruen = 0, 65535, 0</span>
+<span class="c1"># Blau  = 0, 0, 65535</span>
+<span class="c1"># Aus   = 0, 0, 0</span>
+<span class="n">rot</span> <span class="o">=</span> <span class="mi">65535</span>
+<span class="n">gruen</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">blau</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">r</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">rot</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">gruen</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="n">blau</span><span class="p">)</span>
+</code></pre></div>
+<p>Teste auch: Lass Rot und Grün gleichzeitig an, um Gelb zu erhalten, oder lasse alle drei Farben leuchten.</p>
+<h2 id="4-taster">4. Taster</h2>
+<p>Der Taster funktioniert wie ein Knopf.
+Er ist an Pin 1 angeschlossen und soll beim Drücken einen Text in der Kommandozeile ausgeben. Wichtig: Beim IoT-Sensor bedeutet <code>0</code>, dass der Taster gedrückt ist.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">PULL_UP</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Bei Pull-Up bedeutet 0: Taste ist gedrueckt.</span>
+    <span class="k">if</span> <span class="n">button</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Button gedrueckt"</span><span class="p">)</span>
+        <span class="c1"># Kurze Pause gegen mehrfaches Ausloesen.</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</code></pre></div>
+<p><code>time.sleep(0.2)</code> sorgt dafür, dass durch das sogenannte Prellen des Tasters der Text nicht mehrmals auf einmal ausgegeben wird.</p>
+<h2 id="5-buzzer">5. Buzzer</h2>
+<p>Der Buzzer ist ein kleiner Summer. In diesem Beispiel erzeugt er für 1 Sekunde einen Ton.
+<code>freq(1000)</code> bestimmt die Tonhöhe (Frequenz). Die Zahl bei <code>duty_u16(5000)</code> bestimmt die Lautstärke.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">PWM</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">buzzer</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
+
+<span class="c1"># Tonhoehe einstellen.</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="c1"># Ton einschalten.</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">30000</span><span class="p">)</span>
+<span class="c1"># 1 Sekunde warten.</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Ton wieder ausschalten.</span>
+<span class="n">buzzer</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<p>Teste auch: Andere Tonhöhen und Lautstärken.</p>
+<h2 id="6-display">6. Display</h2>
+<p>Auf dem Display kann Text angezeigt werden.
+Voraussetzung: Die Datei <code>ssd1306.py</code> ist auf dem Pico.
+Wenn sie noch fehlt, klappe den Block auf und kopiere sie.</p>
+<details>
+    <summary>ssd1306.py Datei (Display Treiber)</summary>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># MicroPython SSD1306 OLED driver, I2C and SPI interfaces</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">micropython</span><span class="w"> </span><span class="kn">import</span> <span class="n">const</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">framebuf</span>
+
+
+<span class="c1"># register definitions</span>
+<span class="n">SET_CONTRAST</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x81</span><span class="p">)</span>
+<span class="n">SET_ENTIRE_ON</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xA4</span><span class="p">)</span>
+<span class="n">SET_NORM_INV</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xA6</span><span class="p">)</span>
+<span class="n">SET_DISP</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xAE</span><span class="p">)</span>
+<span class="n">SET_MEM_ADDR</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x20</span><span class="p">)</span>
+<span class="n">SET_COL_ADDR</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x21</span><span class="p">)</span>
+<span class="n">SET_PAGE_ADDR</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x22</span><span class="p">)</span>
+<span class="n">SET_DISP_START_LINE</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x40</span><span class="p">)</span>
+<span class="n">SET_SEG_REMAP</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xA0</span><span class="p">)</span>
+<span class="n">SET_MUX_RATIO</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xA8</span><span class="p">)</span>
+<span class="n">SET_COM_OUT_DIR</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xC0</span><span class="p">)</span>
+<span class="n">SET_DISP_OFFSET</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xD3</span><span class="p">)</span>
+<span class="n">SET_COM_PIN_CFG</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xDA</span><span class="p">)</span>
+<span class="n">SET_DISP_CLK_DIV</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xD5</span><span class="p">)</span>
+<span class="n">SET_PRECHARGE</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xD9</span><span class="p">)</span>
+<span class="n">SET_VCOM_DESEL</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0xDB</span><span class="p">)</span>
+<span class="n">SET_CHARGE_PUMP</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x8D</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SSD1306</span><span class="p">(</span><span class="n">framebuf</span><span class="o">.</span><span class="n">FrameBuffer</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">external_vcc</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">external_vcc</span> <span class="o">=</span> <span class="n">external_vcc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pages</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">8</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pages</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">framebuf</span><span class="o">.</span><span class="n">MONO_VLSB</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_display</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">init_display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="p">(</span>
+            <span class="n">SET_DISP</span> <span class="o">|</span> <span class="mh">0x00</span><span class="p">,</span>
+            <span class="n">SET_MEM_ADDR</span><span class="p">,</span>
+            <span class="mh">0x00</span><span class="p">,</span>
+            <span class="n">SET_DISP_START_LINE</span> <span class="o">|</span> <span class="mh">0x00</span><span class="p">,</span>
+            <span class="n">SET_SEG_REMAP</span> <span class="o">|</span> <span class="mh">0x01</span><span class="p">,</span>
+            <span class="n">SET_MUX_RATIO</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="n">SET_COM_OUT_DIR</span> <span class="o">|</span> <span class="mh">0x08</span><span class="p">,</span>
+            <span class="n">SET_DISP_OFFSET</span><span class="p">,</span>
+            <span class="mh">0x00</span><span class="p">,</span>
+            <span class="n">SET_COM_PIN_CFG</span><span class="p">,</span>
+            <span class="mh">0x02</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="k">else</span> <span class="mh">0x12</span><span class="p">,</span>
+            <span class="n">SET_DISP_CLK_DIV</span><span class="p">,</span>
+            <span class="mh">0x80</span><span class="p">,</span>
+            <span class="n">SET_PRECHARGE</span><span class="p">,</span>
+            <span class="mh">0x22</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">external_vcc</span> <span class="k">else</span> <span class="mh">0xF1</span><span class="p">,</span>
+            <span class="n">SET_VCOM_DESEL</span><span class="p">,</span>
+            <span class="mh">0x30</span><span class="p">,</span>
+            <span class="n">SET_CONTRAST</span><span class="p">,</span>
+            <span class="mh">0xFF</span><span class="p">,</span>
+            <span class="n">SET_ENTIRE_ON</span><span class="p">,</span>
+            <span class="n">SET_NORM_INV</span><span class="p">,</span>
+            <span class="n">SET_CHARGE_PUMP</span><span class="p">,</span>
+            <span class="mh">0x10</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">external_vcc</span> <span class="k">else</span> <span class="mh">0x14</span><span class="p">,</span>
+            <span class="n">SET_DISP</span> <span class="o">|</span> <span class="mh">0x01</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">poweroff</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">SET_DISP</span> <span class="o">|</span> <span class="mh">0x00</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">poweron</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">SET_DISP</span> <span class="o">|</span> <span class="mh">0x01</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">contrast</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contrast</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">SET_CONTRAST</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">contrast</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">invert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">invert</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">SET_NORM_INV</span> <span class="o">|</span> <span class="p">(</span><span class="n">invert</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">==</span> <span class="mi">64</span><span class="p">:</span>
+            <span class="n">x0</span> <span class="o">+=</span> <span class="mi">32</span>
+            <span class="n">x1</span> <span class="o">+=</span> <span class="mi">32</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">SET_COL_ADDR</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="n">SET_PAGE_ADDR</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_cmd</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pages</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SSD1306_I2C</span><span class="p">(</span><span class="n">SSD1306</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">i2c</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="mh">0x3C</span><span class="p">,</span> <span class="n">external_vcc</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i2c</span> <span class="o">=</span> <span class="n">i2c</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addr</span> <span class="o">=</span> <span class="n">addr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temp</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa">b</span><span class="s2">"</span><span class="se">\x40</span><span class="s2">"</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">external_vcc</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x80</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">cmd</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i2c</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">temp</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buf</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">buf</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i2c</span><span class="o">.</span><span class="n">writevto</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_list</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SSD1306_SPI</span><span class="p">(</span><span class="n">SSD1306</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">spi</span><span class="p">,</span> <span class="n">dc</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="n">external_vcc</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rate</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span>
+        <span class="n">dc</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">dc</span><span class="o">.</span><span class="n">OUT</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">OUT</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">cs</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">cs</span><span class="o">.</span><span class="n">OUT</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spi</span> <span class="o">=</span> <span class="n">spi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dc</span> <span class="o">=</span> <span class="n">dc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">res</span> <span class="o">=</span> <span class="n">res</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cs</span> <span class="o">=</span> <span class="n">cs</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">res</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">res</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">res</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">external_vcc</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_cmd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spi</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">baudrate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rate</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spi</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">([</span><span class="n">cmd</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buf</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spi</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">baudrate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rate</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spi</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+</details>
+
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">I2C</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ssd1306</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># Verbindung zum Display herstellen.</span>
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">scl</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">sda</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">oled</span> <span class="o">=</span> <span class="n">ssd1306</span><span class="o">.</span><span class="n">SSD1306_I2C</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">i2c</span><span class="p">)</span>
+
+<span class="c1"># Altes Bild loeschen und neuen Text zeichnen.</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Hallo!"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">"Display Test"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="c1"># Inhalt sichtbar machen.</span>
+<span class="n">oled</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
